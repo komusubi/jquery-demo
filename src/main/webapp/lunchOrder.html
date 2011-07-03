@@ -1,0 +1,119 @@
+<!-- 
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.    
+ -->
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>お弁当注文システム</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header"><h1>お弁当注文システム</h1></div>
+    <div data-role="content">
+    <!-- 
+    <label for="loginId">ID:</label>
+    -->
+    ID:
+    <br>
+    <input type="text" type="email" id="loginId">
+    <br>
+    <!-- 
+    <label for="passwd">Password:</label>
+    -->
+    Password:
+    <br>
+    <input type="password" type="password" id="passwd">
+    <div data-inline="true">
+      <a href="#menu" data-role="button" 
+        data-theme="b" data-inline="true"
+        data-transition="slide">ログイン</a>
+      <!-- 
+      <input type="submit" value="ログイン" data-theme="b" data-inline="true">
+      -->
+      <input type="reset" value="クリア" data-inline="true">
+    </div>
+    </div>
+    <div data-role="footer"><h1>by komusubi</h1></div>
+  </div>
+  <div data-role="page" id="menu">
+    <div data-role="header"><h1>本日のメニュー</h1></div>
+    <div data-role="content">
+      <ul data-role="listview" data-split-icon="check">
+        <li><a href="#tamagoya" data-transition="slide"><h3>玉子屋</h3>
+          <p>玉子屋オリジナル えびたっぷり えびカツ<br>ビーフカレー<br>ミートオムレツ<br>福神漬<br>
+もやしナムル<br>きゅうりの一本漬ドレッシング添え千切キャベツ</p></a>
+         <a href="#alert" data-rel="dialog">注文する</a>
+        </li>
+        <li><a href="#fresh" data-transition="slide"><h3>フレッシュランチ</h3>
+          <p>ハンバーグのサウザンタルタルソース<br>白身フライ<br>
+            鶏肉ときのこのクリーム煮<br>いんげんソテー<br></p></a>
+          <a href="#alert" data-rel="dialog">注文する</a>
+        </li>
+      </ul>
+    </div>
+    <div data-role="footer"><h1>by komusubi</h1></div>
+  </div>
+  <div data-role="page" data-add-back-btn="true" id="tamagoya">
+    <div data-role="header"><h1>玉子屋</h1></div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li data-role="list-driver">今週のメニュー</li>
+        <li><h3>７月４日（月）</h3><p>玉子屋オリジナル<br>えびたっぷり　えびカツ梅の香ごはんの和風弁当</p></li>
+        <li><h3>７月５日（火）</h3><p>梅の香ごはんの和風弁当</p></li>
+        <li><h3>７月６日（水）</h3><p>牛肉のプルコギ風ピリ辛おろし添え</p></li>
+        <li><h3>７月７日（木）</h3><p>骨無し 黄金カレイのソテー和風タルタルソース</p></li>
+        <li><h3>７月８日（金）</h3><p>豚肉の香味揚　黒酢あんかけ</p></li>
+      </ul>
+    </div>
+    <div data-role="footer"><h1>by komusubi</h1></div>
+  </div>
+  <div data-role="page" data-add-back-btn="true" id="fresh">
+    <div data-role="header" data-position="fixed"><h1>フレッシュランチ</h1></div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li data-role="list-driver">今週のメニュー</li>
+        <li><h3>７月４日（月）</h3><p>ハンバーグのサウザンタルタルソース<br>白身フライ<br>
+            鶏肉ときのこのクリーム煮<br>いんげんソテー<br></p></li>
+        <li><h3>７月５日（火）</h3><p>ピリ辛ごぼう入りメンチ<br>おいしいさばゆず味噌あんかけ<br></p></li>
+        <li><h3>７月６日（水）</h3><p>豚肉しょうが焼肉炒め<br>にしん漬け焼き</p></li>
+        <li><h3>７月７日（木）</h3><p>チルドとんかつ<br>豆カレー</p></li>
+        <li><h3>７月８日（金）</h3><p>若鶏もも照焼き<br>いか竜田の南蛮たれ</p></li>
+      </ul>
+    </div>
+    <div data-role="footer"><h1>by komusubi</h1></div>
+  </div>
+  <div data-role="dialog" id="alert">
+    <div data-role="header"><h1>注文のご確認</h1></div>
+    <div data-role="content">
+      <a href="#complete" data-role="button" data-theme="b">注文します</a>
+      <a href="#menu" data-role="button">キャンセル</a>
+    </div>
+  </div>
+  <div data-role="page" id="complete">
+    <div data-role="header">
+      <a href="#menu" data-role="button" data-icon="home" data-direction="reverse"></a>
+      <h1>注文の完了</h1>
+    </div>
+    <div data-role="content"><h3>ご注文ありがとうございました。</h3></div>
+    <div data-role="footer"><h1>by komusubi</h1></div>
+  </div>
+</body>
+</html>
